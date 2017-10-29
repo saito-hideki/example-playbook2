@@ -1,0 +1,21 @@
+---
+- hosts: all
+
+  tasks:
+    - name: create user "{{ remote_username }}"
+      user:
+        name: "{{ remote_username }}"
+        state: present
+      become: yes
+      become_user: root
+      become_method: sudo
+
+    - name: create authorized_keys and append key
+      authorized_key:
+        user: "{{ remote_username }}"
+        state: present
+        key: "{{ public_key_file }}"
+      become: yes
+      become_user: root
+      become_method: sudo
+

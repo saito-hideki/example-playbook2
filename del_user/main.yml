@@ -1,0 +1,13 @@
+---
+- hosts: all
+
+  tasks:
+    - name: delete user "{{ remote_username }}"
+      user:
+        name: "{{ remote_username }}"
+        remove: yes
+        state: absent
+      become: yes
+      become_user: root
+      become_method: sudo
+

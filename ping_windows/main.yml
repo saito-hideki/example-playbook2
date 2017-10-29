@@ -1,0 +1,6 @@
+---
+- hosts: all 
+
+  tasks:
+  - name: ping windows host
+    win_ping:

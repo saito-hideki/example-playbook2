@@ -1,0 +1,12 @@
+---
+- hosts: all
+
+  tasks:
+    - name: get hostname
+      shell: /usr/bin/hostname
+      register: result_hostname
+
+    - name: print result
+      debug:
+        msg: "{{ result_hostname.stdout }}"
+

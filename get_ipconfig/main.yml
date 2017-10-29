@@ -1,0 +1,11 @@
+---
+- hosts: all 
+
+  tasks:
+    - name: get ipconfig
+      raw: ipconfig
+      register: result_ipconfig
+
+    - name: print ipconfig
+      debug:
+        msg: "{{result_ipconfig.stdout }}"
