@@ -1,0 +1,16 @@
+---
+- hosts: all
+
+  vars:
+    module_name: template
+
+  tasks:
+    - name: copy test0.txt using copy module
+      copy:
+        src: test0.txt
+        dest: /tmp/test0.txt
+      
+    - name: create test1.txt using template module
+      template:
+        src: test1.txt.j2
+        dest: /tmp/test1.txt
