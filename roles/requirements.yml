@@ -1,2 +1,2 @@
-- src: git+https://github.com:saito-hideki/galaxy_test.git
+- src: git+https://github.com/saito-hideki/galaxy_test.git
   scm: git
