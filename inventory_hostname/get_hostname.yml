@@ -1,0 +1,12 @@
+---
+- hosts: test
+  order: "{{ sort_method | default("inventory") }}"
+  #order: inventory
+  #order: reverse_inventory
+  #order: sorted
+  #order: reverse_sorted
+  gather_facts: no
+
+  tasks:
+    - debug: var=inventory_hostname
+    - ping:
